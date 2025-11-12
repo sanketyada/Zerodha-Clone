@@ -1,10 +1,9 @@
 import React from 'react'
+import HomePage from './LandingPages/Home/HomePage'
 
 function App() {
   return (
-    <div>
-      <h1>Sanket Yadav</h1>
-    </div>
+      <HomePage/>
   )
 }
 
