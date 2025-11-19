@@ -1,12 +1,14 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function Navbar() {
   return (
-      <nav class="navbar navbar-expand-lg bg-body-tertiary boredr-bottom" style={{backgroundcolor:"#fff"}}>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom mb-5" style={{backgroundcolor:"#fff"}}>
         <div class="container p-2">
-          <a class="navbar-brand" href="#">
+          <Link
+          to={"/"}
+          className="navbar-brand" href="#">
             <img src="media/logo.svg" style={{width:"25%"}} alt="" />
-          </a>
+          </Link>
           <button
             class="navbar-toggler"
             type="button"
@@ -21,29 +23,39 @@ function Navbar() {
           <div class="collapse navbar-collapse navbarleft" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active  fw-normal" aria-current="page" href="#">
+                <Link
+                to={"/signUp"}
+                 class="nav-link active  fw-medium text-muted" aria-current="page" href="#">
                   SignUp
-                </a>
+                </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link active fw-normal" href="#">
+                <Link
+                to={"/about"}
+                 class="nav-link active fw-medium text-muted" href="#">
                   About
-                </a>
+                </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link active fw-normal" href="#">
+                <Link
+                to={"/product"}
+                class="nav-link active fw-medium text-muted" href="#">
                   Product
-                </a>
+                </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link active fw-normal" href="#">
+                <Link
+                to={"/priceing"}
+                 class="nav-link active fw-medium text-muted" href="#">
                   Priceing
-                </a>
+                </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link active fw-normal" href="#">
-                  Priceing
-                </a>
+                <Link
+                to={"/support"}
+                 class="nav-link active fw-medium text-muted" href="#">
+                  Support
+                </Link>
               </li>
             </ul>
             <form class="d-flex" role="search">

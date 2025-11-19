@@ -4,3 +4,13 @@
 a{
   text-decoration: none;
 }
+.Social-Links a {
+margin: 5px;
+font-size: 20px;
+color: rgb(119, 112, 112);
+}
+ul a{
+  color: rgb(104, 97, 97);
+  margin: 8px 0px;
+  font-weight: medium;
+}
