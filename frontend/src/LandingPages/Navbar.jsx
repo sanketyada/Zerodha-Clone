@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 function Navbar() {
   return (
-      <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom mb-5" style={{backgroundcolor:"#fff"}}>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom " style={{backgroundcolor:"#fff"}}>
         <div class="container p-2">
           <Link
           to={"/"}

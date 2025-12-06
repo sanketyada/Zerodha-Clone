@@ -14,3 +14,36 @@ ul a{
   margin: 8px 0px;
   font-weight: medium;
 }
+.account a {
+margin: 5px;
+
+}
+.navbar-nav a{
+  color: rgb(14, 14, 42);
+  font-weight: normal;
+}
+#supportHero{
+  background-color: rgb(56, 126, 209);
+  color: white;
+}
+#supportHero a{
+  color: white;
+  text-decoration: underline;
+}
+#supportWrapper{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 150px;
+}
+#SupportFeatured{
+  margin: 0 150px;
+
+}
+#SupportFeatured input{
+  padding: 15px 10px;
+  width: 100%;
+  border-radius: 10px;
+}
+#SupportFeatured a{
+  margin-right: 10px;
+}
