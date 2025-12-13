@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { positions } from "../data/data";
+// import { positions } from "../data/data";
+import axios from "axios";
 
 const Positions = () => {
+  const [positions, setPositions] = useState([]);
+
+  useState(() => {
+    axios.get("http://localhost:5000/allPostions").then((res) => {
+      setPositions(res.data);
+    });
+  });
+  // console.log( positions)
+
   return (
     <>
       <h3 className="title">Positions ({positions.length})</h3>
