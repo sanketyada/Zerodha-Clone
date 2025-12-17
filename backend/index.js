@@ -4,18 +4,18 @@ const express = require("express");
 const app = express();
 
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser")
-const cors = require("cors")
+const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const PORT = process.env.PORT || 5000;
 const uri = process.env.MONGO_URL;
 // const { HoldingsModel } = require("./models/HoldingsModel");
 const HoldingModel = require("./models/HoldingsModel");
-const {PositionModel} = require("./models/PositionModel");
+const { PositionModel } = require("./models/PositionModel");
+const { OrdersModels } = require("./models/OrdersModels");
 
-
-app.use(cors())
-app.use(bodyParser.json())
+app.use(cors());
+app.use(bodyParser.json());
 // app.get("/addHoldings", async (req, res) => {
 //   let tempHoldings = [
 //     {
@@ -182,20 +182,36 @@ app.use(bodyParser.json())
 //   res.send("Position Data Stored!")
 // });
 
-app.get("/",(req,res)=>{
-  res.send("Server is Working")
-})
-app.get("/allHoldings",async(req,res)=>{
-  let allHoldings = await HoldingModel.find({})
-  res.json(allHoldings)
-})
-app.get("/allPostions",async(req,res)=>{
-  let allPostions = await PositionModel.find({})
-  res.json(allPostions)
-})
+app.get("/", (req, res) => {
+  res.send("Server is Working");
+});
+app.get("/allHoldings", async (req, res) => {
+  let allHoldings = await HoldingModel.find({});
+  res.json(allHoldings);
+});
+app.get("/allPostions", async (req, res) => {
+  let allPostions = await PositionModel.find({});
+  res.json(allPostions);
+});
+app.get("/allOrders", async (req, res) => {
+  let allOrders = await OrdersModels.find({});
+  res.json(allOrders);
+});
+
+
+app.post("/newOrder", async (req, res) => {
+  let newOrder = new OrdersModels({
+    name:req.body.name,
+    qty:req.body.qty ,
+    price:req.body.price,
+    mode:req.body.mode,
+  });
+  newOrder.save();
+  res.send("Order Saved");
+});
 
 app.listen(PORT, () => {
   mongoose.connect(uri);
   console.log("Database Conneted");
-  console.log("App is Listening", PORT);
+  console.log(`http://localhost:${PORT}`);
 });
